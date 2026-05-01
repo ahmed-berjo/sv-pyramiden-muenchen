@@ -1,12 +1,15 @@
 // Carousels
 document.querySelectorAll('.carousel-wrap').forEach(wrap => {
   const track = wrap.querySelector('.carousel-track');
-  const cardWidth = () => track.querySelector('.player-card').offsetWidth + 16;
+  const cardWidth = () => {
+    const card = track.querySelector('.player-card');
+    return card ? card.offsetWidth + parseInt(getComputedStyle(track).gap) : 176;
+  };
   wrap.querySelector('.prev').addEventListener('click', () => {
-    track.scrollBy({ left: -cardWidth() * 3, behavior: 'smooth' });
+    track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
   });
   wrap.querySelector('.next').addEventListener('click', () => {
-    track.scrollBy({ left: cardWidth() * 3, behavior: 'smooth' });
+    track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
   });
 });
 
