@@ -1,3 +1,22 @@
+// Squad tabs
+const tabs = document.querySelectorAll('.squad-tab');
+const players = document.querySelectorAll('.player-card');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const filter = tab.dataset.filter;
+    players.forEach(p => {
+      if (filter === 'all' || p.dataset.pos === filter) {
+        p.classList.remove('hidden');
+      } else {
+        p.classList.add('hidden');
+      }
+    });
+  });
+});
+
 // Mobile nav toggle
 const toggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');

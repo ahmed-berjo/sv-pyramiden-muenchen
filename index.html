@@ -130,6 +130,7 @@
       <p class="section-eyebrow center">The Team</p>
       <h2 class="center">Squad</h2>
 
+      <!-- Coaching Staff -->
       <div class="squad-block">
         <h3 class="squad-group-title">Coaching Staff</h3>
         <div class="staff-grid">
@@ -151,60 +152,56 @@
         </div>
       </div>
 
-      <div class="squad-block">
-        <h3 class="squad-group-title">Goalkeepers</h3>
-        <div class="players-grid">
-          <div class="player-card"><div class="player-num-badge">98</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mahmoud Akl</p><p class="player-pos">Goalkeeper</p></div>
-          <div class="player-card"><div class="player-num-badge">1</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Moustafa Sherif</p><p class="player-pos">Goalkeeper</p></div>
-        </div>
+      <!-- Tab filters -->
+      <div class="squad-tabs">
+        <button class="squad-tab active" data-filter="all">All</button>
+        <button class="squad-tab" data-filter="goalkeeper">Goalkeepers</button>
+        <button class="squad-tab" data-filter="defender">Defenders</button>
+        <button class="squad-tab" data-filter="midfielder">Midfielders</button>
+        <button class="squad-tab" data-filter="forward">Forwards</button>
       </div>
 
-      <div class="squad-block">
-        <h3 class="squad-group-title">Defenders</h3>
-        <div class="players-grid">
-          <div class="player-card"><div class="player-num-badge">35</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Abdelrahman Elshabrawy</p><p class="player-pos">Defender</p></div>
-          <div class="player-card"><div class="player-num-badge">33</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Ahmed Ehab Loulah</p><p class="player-pos">Defender</p></div>
-          <div class="player-card"><div class="player-num-badge">2</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Amr Youness</p><p class="player-pos">Defender</p></div>
-          <div class="player-card"><div class="player-num-badge">15</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Ehab Mansour</p><p class="player-pos">Defender</p></div>
-          <div class="player-card"><div class="player-num-badge">4</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Karim Elbeih</p><p class="player-pos">Defender</p></div>
-          <div class="player-card"><div class="player-num-badge">17</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Abdelmawgoud</p><p class="player-pos">Defender</p></div>
-          <div class="player-card"><div class="player-num-badge">6</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Adel</p><p class="player-pos">Defender</p></div>
-          <div class="player-card"><div class="player-num-badge">3</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Hosny</p><p class="player-pos">Defender</p></div>
-          <div class="player-card"><div class="player-num-badge">7</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Hussein Sonic</p><p class="player-pos">Defender</p></div>
-          <div class="player-card"><div class="player-num-badge">25</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mostafa Fikry</p><p class="player-pos">Defender</p></div>
-          <div class="player-card"><div class="player-num-badge">66</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mustafa Mahgoub</p><p class="player-pos">Defender</p></div>
-          <div class="player-card"><div class="player-num-badge">18</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Ramy Marghany</p><p class="player-pos">Defender</p></div>
-        </div>
+      <!-- Players grid -->
+      <div class="players-grid filtered-grid">
+        <!-- Goalkeepers -->
+        <div class="player-card" data-pos="goalkeeper"><div class="player-num-badge">98</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mahmoud Akl</p><p class="player-pos">Goalkeeper</p></div>
+        <div class="player-card" data-pos="goalkeeper"><div class="player-num-badge">1</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Moustafa Sherif</p><p class="player-pos">Goalkeeper</p></div>
+        <!-- Defenders -->
+        <div class="player-card" data-pos="defender"><div class="player-num-badge">35</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Abdelrahman Elshabrawy</p><p class="player-pos">Defender</p></div>
+        <div class="player-card" data-pos="defender"><div class="player-num-badge">33</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Ahmed Ehab Loulah</p><p class="player-pos">Defender</p></div>
+        <div class="player-card" data-pos="defender"><div class="player-num-badge">2</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Amr Youness</p><p class="player-pos">Defender</p></div>
+        <div class="player-card" data-pos="defender"><div class="player-num-badge">15</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Ehab Mansour</p><p class="player-pos">Defender</p></div>
+        <div class="player-card" data-pos="defender"><div class="player-num-badge">4</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Karim Elbeih</p><p class="player-pos">Defender</p></div>
+        <div class="player-card" data-pos="defender"><div class="player-num-badge">17</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Abdelmawgoud</p><p class="player-pos">Defender</p></div>
+        <div class="player-card" data-pos="defender"><div class="player-num-badge">6</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Adel</p><p class="player-pos">Defender</p></div>
+        <div class="player-card" data-pos="defender"><div class="player-num-badge">3</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Hosny</p><p class="player-pos">Defender</p></div>
+        <div class="player-card" data-pos="defender"><div class="player-num-badge">7</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Hussein Sonic</p><p class="player-pos">Defender</p></div>
+        <div class="player-card" data-pos="defender"><div class="player-num-badge">25</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mostafa Fikry</p><p class="player-pos">Defender</p></div>
+        <div class="player-card" data-pos="defender"><div class="player-num-badge">66</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mustafa Mahgoub</p><p class="player-pos">Defender</p></div>
+        <div class="player-card" data-pos="defender"><div class="player-num-badge">18</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Ramy Marghany</p><p class="player-pos">Defender</p></div>
+        <!-- Midfielders -->
+        <div class="player-card" data-pos="midfielder"><div class="player-num-badge">13</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Ahmed Ibrahim</p><p class="player-pos">Midfielder</p></div>
+        <div class="player-card" data-pos="midfielder"><div class="player-num-badge">87</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Ahmed Saleh</p><p class="player-pos">Midfielder</p></div>
+        <div class="player-card" data-pos="midfielder"><div class="player-num-badge">8</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Amer Mahrous</p><p class="player-pos">Midfielder</p></div>
+        <div class="player-card" data-pos="midfielder"><div class="player-num-badge">20</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Elsaidy Mohamed</p><p class="player-pos">Midfielder</p></div>
+        <div class="player-card" data-pos="midfielder"><div class="player-num-badge">23</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Hisham Eldeeb</p><p class="player-pos">Midfielder</p></div>
+        <div class="player-card" data-pos="midfielder"><div class="player-num-badge">5</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Hussein Katamish</p><p class="player-pos">Midfielder</p></div>
+        <div class="player-card" data-pos="midfielder"><div class="player-num-badge">14</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Ali</p><p class="player-pos">Midfielder</p></div>
+        <div class="player-card" data-pos="midfielder"><div class="player-num-badge">22</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Eslam</p><p class="player-pos">Midfielder</p></div>
+        <div class="player-card" data-pos="midfielder"><div class="player-num-badge">27</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Ezzat</p><p class="player-pos">Midfielder</p></div>
+        <div class="player-card" data-pos="midfielder"><div class="player-num-badge">24</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mustafa Talaat</p><p class="player-pos">Midfielder</p></div>
+        <!-- Forwards -->
+        <div class="player-card" data-pos="forward"><div class="player-num-badge">21</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Amr Bayoumy</p><p class="player-pos">Forward</p></div>
+        <div class="player-card" data-pos="forward"><div class="player-num-badge">16</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Ibrahim Dewedar</p><p class="player-pos">Forward</p></div>
+        <div class="player-card" data-pos="forward"><div class="player-num-badge">12</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mahmoud Rashad</p><p class="player-pos">Forward</p></div>
+        <div class="player-card" data-pos="forward"><div class="player-num-badge">10</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Elgouny</p><p class="player-pos">Forward</p></div>
+        <div class="player-card" data-pos="forward"><div class="player-num-badge">11</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Keshk</p><p class="player-pos">Forward</p></div>
+        <div class="player-card" data-pos="forward"><div class="player-num-badge">9</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Moaz</p><p class="player-pos">Forward</p></div>
+        <div class="player-card" data-pos="forward"><div class="player-num-badge">19</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Tarek Elzomor</p><p class="player-pos">Forward</p></div>
       </div>
 
-      <div class="squad-block">
-        <h3 class="squad-group-title">Midfielders</h3>
-        <div class="players-grid">
-          <div class="player-card"><div class="player-num-badge">13</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Ahmed Ibrahim</p><p class="player-pos">Midfielder</p></div>
-          <div class="player-card"><div class="player-num-badge">87</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Ahmed Saleh</p><p class="player-pos">Midfielder</p></div>
-          <div class="player-card"><div class="player-num-badge">8</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Amer Mahrous</p><p class="player-pos">Midfielder</p></div>
-          <div class="player-card"><div class="player-num-badge">20</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Elsaidy Mohamed</p><p class="player-pos">Midfielder</p></div>
-          <div class="player-card"><div class="player-num-badge">23</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Hisham Eldeeb</p><p class="player-pos">Midfielder</p></div>
-          <div class="player-card"><div class="player-num-badge">5</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Hussein Katamish</p><p class="player-pos">Midfielder</p></div>
-          <div class="player-card"><div class="player-num-badge">14</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Ali</p><p class="player-pos">Midfielder</p></div>
-          <div class="player-card"><div class="player-num-badge">22</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Eslam</p><p class="player-pos">Midfielder</p></div>
-          <div class="player-card"><div class="player-num-badge">27</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Ezzat</p><p class="player-pos">Midfielder</p></div>
-          <div class="player-card"><div class="player-num-badge">24</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mustafa Talaat</p><p class="player-pos">Midfielder</p></div>
-        </div>
-      </div>
-
-      <div class="squad-block">
-        <h3 class="squad-group-title">Forwards</h3>
-        <div class="players-grid">
-          <div class="player-card"><div class="player-num-badge">21</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Amr Bayoumy</p><p class="player-pos">Forward</p></div>
-          <div class="player-card"><div class="player-num-badge">16</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Ibrahim Dewedar</p><p class="player-pos">Forward</p></div>
-          <div class="player-card"><div class="player-num-badge">12</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mahmoud Rashad</p><p class="player-pos">Forward</p></div>
-          <div class="player-card"><div class="player-num-badge">10</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Elgouny</p><p class="player-pos">Forward</p></div>
-          <div class="player-card"><div class="player-num-badge">11</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Keshk</p><p class="player-pos">Forward</p></div>
-          <div class="player-card"><div class="player-num-badge">9</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Mohamed Moaz</p><p class="player-pos">Forward</p></div>
-          <div class="player-card"><div class="player-num-badge">19</div><div class="player-avatar-wrap"><div class="player-avatar">&#128100;</div></div><p class="player-name">Tarek Elzomor</p><p class="player-pos">Forward</p></div>
-        </div>
-      </div>
+    </div>
+  </section>
     </div>
   </section>
 
