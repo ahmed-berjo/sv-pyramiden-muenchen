@@ -1,19 +1,12 @@
-// Squad tabs
-const tabs = document.querySelectorAll('.squad-tab');
-const players = document.querySelectorAll('.player-card');
-
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    const filter = tab.dataset.filter;
-    players.forEach(p => {
-      if (filter === 'all' || p.dataset.pos === filter) {
-        p.classList.remove('hidden');
-      } else {
-        p.classList.add('hidden');
-      }
-    });
+// Carousels
+document.querySelectorAll('.carousel-wrap').forEach(wrap => {
+  const track = wrap.querySelector('.carousel-track');
+  const cardWidth = () => track.querySelector('.player-card').offsetWidth + 16;
+  wrap.querySelector('.prev').addEventListener('click', () => {
+    track.scrollBy({ left: -cardWidth() * 3, behavior: 'smooth' });
+  });
+  wrap.querySelector('.next').addEventListener('click', () => {
+    track.scrollBy({ left: cardWidth() * 3, behavior: 'smooth' });
   });
 });
 
