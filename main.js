@@ -1,3 +1,119 @@
+// Language toggle
+const translations = {
+  en: {
+    nav_home: 'Home', nav_club: 'Club', nav_squad: 'Squad', nav_contact: 'Contact',
+    nav_sub: 'Munich',
+    hero_eyebrow: 'Founded 2025 · Munich',
+    hero_title: 'Where Heritage<br />Meets the<br /><em>Beautiful Game</em>',
+    hero_desc: 'An amateur football club connecting cultures, building community, and playing with heart in the heart of Bavaria.',
+    hero_cta1: 'Meet the Squad', hero_cta2: 'Get in Touch',
+    info_founded: 'Year Founded', info_city: 'Home City',
+    info_level: 'Amateur', info_level_label: 'Level', info_ground: 'Home Ground',
+    about_eyebrow: 'Our Story',
+    about_title: 'More Than a Football Club',
+    about_p1: 'SV Pyramiden München is an amateur football club in Munich, founded by Egyptians with the aim of connecting cultures through sport and fostering a strong community spirit.',
+    about_p2: 'By combining a passion for football with a deep sense of heritage, the club promotes diversity, mutual respect, and integration within the wider Munich community.',
+    squad_eyebrow: 'The Team', squad_title: 'Squad',
+    coaching_staff: 'Coaching Staff',
+    head_coach: 'Head Coach', asst_coach: 'Assistant Coach',
+    pos_goalkeepers: 'Goalkeepers', pos_defenders: 'Defenders',
+    pos_midfielders: 'Midfielders', pos_forwards: 'Forwards',
+    pos_goalkeeper: 'Goalkeeper', pos_defender: 'Defender',
+    pos_midfielder: 'Midfielder', pos_forward: 'Forward',
+    contact_eyebrow: 'Reach Out', contact_title: 'Contact Us',
+    contact_desc: "Whether you want to join the club, ask a question, or just say hello — we'd love to hear from you.",
+    instagram_btn: 'Follow on Instagram',
+    form_name: 'Full Name', form_name_ph: 'Your name',
+    form_email: 'Email Address',
+    form_msg: 'Message', form_msg_ph: 'How can we help?',
+    form_submit: 'Send Message',
+    footer_founded: 'Founded 2025',
+    footer_copy: '© 2025 SV Pyramiden München. All rights reserved.'
+  },
+  de: {
+    nav_home: 'Start', nav_club: 'Verein', nav_squad: 'Kader', nav_contact: 'Kontakt',
+    nav_sub: 'München',
+    hero_eyebrow: 'Gegründet 2025 · München',
+    hero_title: 'Fußball verbindet –<br />Kulturen<br /><em>auch</em>',
+    hero_desc: 'Ein Amateurverein aus München, der Kulturen durch Sport zusammenbringt und ein starkes Gemeinschaftsgefühl fördert.',
+    hero_cta1: 'Zum Kader', hero_cta2: 'Kontakt aufnehmen',
+    info_founded: 'Gründungsjahr', info_city: 'Heimatstadt',
+    info_level: 'Amateur', info_level_label: 'Spielklasse', info_ground: 'Heimstadion',
+    about_eyebrow: 'Unsere Geschichte',
+    about_title: 'Mehr als nur ein Fußballverein',
+    about_p1: 'SV Pyramiden München ist ein Amateurverein aus München, der von Ägyptern gegründet wurde – mit dem Ziel, Kulturen durch den Sport zu verbinden und ein starkes Gemeinschaftsgefühl zu schaffen.',
+    about_p2: 'Mit einer Leidenschaft für Fußball und einem tiefen Bezug zur eigenen Herkunft setzt sich der Verein für Vielfalt, gegenseitigen Respekt und Integration in der Münchner Stadtgesellschaft ein.',
+    squad_eyebrow: 'Das Team', squad_title: 'Kader',
+    coaching_staff: 'Trainerstab',
+    head_coach: 'Cheftrainer', asst_coach: 'Co-Trainer',
+    pos_goalkeepers: 'Torwart', pos_defenders: 'Verteidiger',
+    pos_midfielders: 'Mittelfeldspieler', pos_forwards: 'Stürmer',
+    pos_goalkeeper: 'Torwart', pos_defender: 'Verteidiger',
+    pos_midfielder: 'Mittelfeldspieler', pos_forward: 'Stürmer',
+    contact_eyebrow: 'Schreib uns', contact_title: 'Kontakt',
+    contact_desc: 'Ob du dem Verein beitreten möchtest, eine Frage hast oder einfach Hallo sagen willst – wir freuen uns von dir zu hören.',
+    instagram_btn: 'Auf Instagram folgen',
+    form_name: 'Vollständiger Name', form_name_ph: 'Dein Name',
+    form_email: 'E-Mail-Adresse',
+    form_msg: 'Nachricht', form_msg_ph: 'Wie können wir dir helfen?',
+    form_submit: 'Nachricht senden',
+    footer_founded: 'Gegründet 2025',
+    footer_copy: '© 2025 SV Pyramiden München. Alle Rechte vorbehalten.'
+  }
+};
+
+// Position label map for both directions
+const posMap = {
+  'goalkeeper': 'pos_goalkeeper', 'defender': 'pos_defender',
+  'midfielder': 'pos_midfielder', 'forward': 'pos_forward',
+  'torwart': 'pos_goalkeeper', 'verteidiger': 'pos_defender',
+  'mittelfeldspieler': 'pos_midfielder', 'stürmer': 'pos_forward'
+};
+
+function applyLang(lang) {
+  const t = translations[lang];
+
+  // Standard i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  // Placeholder translations
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+
+  // Player position labels
+  document.querySelectorAll('.player-pos').forEach(el => {
+    const key = posMap[el.textContent.trim().toLowerCase()];
+    if (key && t[key]) el.textContent = t[key];
+  });
+
+  // Munich / München city name in info strip
+  document.querySelectorAll('.info-num').forEach(el => {
+    const val = el.textContent.trim();
+    if (val === 'Munich' || val === 'München') {
+      el.textContent = lang === 'de' ? 'München' : 'Munich';
+    }
+  });
+
+  // Toggle active button
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  document.documentElement.lang = lang;
+  localStorage.setItem('lang', lang);
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+});
+
+applyLang(localStorage.getItem('lang') || 'en');
+
 // Carousels
 document.querySelectorAll('.carousel-wrap').forEach(wrap => {
   const track = wrap.querySelector('.carousel-track');
@@ -51,12 +167,11 @@ toggle.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
 
-// Close nav on link click (mobile)
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-// Smooth active nav highlight on scroll
+// Active nav highlight on scroll
 const sections = document.querySelectorAll('section[id]');
 const links = document.querySelectorAll('.nav-links a');
 
@@ -70,12 +185,3 @@ window.addEventListener('scroll', () => {
     if (a.getAttribute('href') === '#' + current) a.classList.add('active');
   });
 });
-
-// Contact form handler
-function handleSubmit(e) {
-  e.preventDefault();
-  const success = document.getElementById('formSuccess');
-  success.style.display = 'block';
-  e.target.reset();
-  setTimeout(() => { success.style.display = 'none'; }, 4000);
-}

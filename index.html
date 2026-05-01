@@ -29,15 +29,20 @@
         <img src="Logo-removebg-preview.png" alt="SV Pyramiden München" class="nav-logo" />
         <div class="nav-brand-text">
           <span class="nav-title">SV Pyramiden</span>
-          <span class="nav-sub">München</span>
+          <span class="nav-sub" data-i18n="nav_sub">Munich</span>
         </div>
       </a>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">Club</a></li>
-        <li><a href="#squad">Squad</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" data-i18n="nav_home">Home</a></li>
+        <li><a href="#about" data-i18n="nav_club">Club</a></li>
+        <li><a href="#squad" data-i18n="nav_squad">Squad</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
       </ul>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <span>|</span>
+        <button class="lang-btn" data-lang="de">DE</button>
+      </div>
       <button class="nav-toggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -49,12 +54,12 @@
     <div class="hero-bg"><div class="hero-bg-shape"></div></div>
     <div class="hero-inner">
       <div class="hero-text">
-        <p class="hero-eyebrow">Founded 2025 · München</p>
-        <h1>Where Heritage<br />Meets the<br /><em>Beautiful Game</em></h1>
-        <p class="hero-desc">An amateur football club connecting cultures, building community, and playing with heart in the heart of Bavaria.</p>
+        <p class="hero-eyebrow" data-i18n="hero_eyebrow">Founded 2025 · München</p>
+        <h1 data-i18n="hero_title">Where Heritage<br />Meets the<br /><em>Beautiful Game</em></h1>
+        <p class="hero-desc" data-i18n="hero_desc">An amateur football club connecting cultures, building community, and playing with heart in the heart of Bavaria.</p>
         <div class="hero-cta">
-          <a href="#squad" class="btn-primary">Meet the Squad</a>
-          <a href="#contact" class="btn-outline">Get in Touch</a>
+          <a href="#squad" class="btn-primary" data-i18n="hero_cta1">Meet the Squad</a>
+          <a href="#contact" class="btn-outline" data-i18n="hero_cta2">Get in Touch</a>
         </div>
       </div>
       <div class="hero-logo-wrap">
@@ -71,13 +76,13 @@
   <!-- Info Strip -->
   <div class="info-strip">
     <div class="info-strip-inner">
-      <div class="info-item"><span class="info-num">2025</span><span class="info-label">Year Founded</span></div>
+      <div class="info-item"><span class="info-num">2025</span><span class="info-label" data-i18n="info_founded">Year Founded</span></div>
       <div class="info-divider"></div>
-      <div class="info-item"><span class="info-num">Munich</span><span class="info-label">Home City</span></div>
+      <div class="info-item"><span class="info-num">Munich</span><span class="info-label" data-i18n="info_city">Home City</span></div>
       <div class="info-divider"></div>
-      <div class="info-item"><span class="info-num">Amateur</span><span class="info-label">Level</span></div>
+      <div class="info-item"><span class="info-num" data-i18n="info_level">Amateur</span><span class="info-label" data-i18n="info_level_label">Level</span></div>
       <div class="info-divider"></div>
-      <div class="info-item"><span class="info-num">Neufahrn</span><span class="info-label">Home Ground</span></div>
+      <div class="info-item"><span class="info-num">Neufahrn</span><span class="info-label" data-i18n="info_ground">Home Ground</span></div>
     </div>
   </div>
 
@@ -92,10 +97,10 @@
           <div class="about-accent-block"></div>
         </div>
         <div class="about-content">
-          <p class="section-eyebrow">Our Story</p>
-          <h2>More Than a Football Club</h2>
-          <p>SV Pyramiden München is an amateur football club in Munich, founded by Egyptians with the aim of connecting cultures through sport and fostering a strong community spirit.</p>
-          <p>By combining a passion for football with a deep sense of heritage, the club promotes diversity, mutual respect, and integration within the wider Munich community.</p>
+          <p class="section-eyebrow" data-i18n="about_eyebrow">Our Story</p>
+          <h2 data-i18n="about_title">More Than a Football Club</h2>
+          <p data-i18n="about_p1">SV Pyramiden München is an amateur football club in Munich, founded by Egyptians with the aim of connecting cultures through sport and fostering a strong community spirit.</p>
+          <p data-i18n="about_p2">By combining a passion for football with a deep sense of heritage, the club promotes diversity, mutual respect, and integration within the wider Munich community.</p>
           <div class="about-ground">
             <div class="ground-icon-wrap">
               <img src="stadium.svg" alt="Stadium" width="32" height="32" />
@@ -113,22 +118,22 @@
   <!-- Squad -->
   <section id="squad" class="squad">
     <div class="container">
-      <p class="section-eyebrow center">The Team</p>
-      <h2 class="center">Squad</h2>
+      <p class="section-eyebrow center" data-i18n="squad_eyebrow">The Team</p>
+      <h2 class="center" data-i18n="squad_title">Squad</h2>
 
       <!-- Coaching Staff -->
       <div class="squad-block">
-        <h3 class="squad-group-title">Coaching Staff</h3>
+        <h3 class="squad-group-title" data-i18n="coaching_staff">Coaching Staff</h3>
         <div class="staff-grid">
           <div class="staff-card">
             <div class="staff-avatar-wrap"><div class="staff-avatar">&#128100;</div></div>
             <p class="staff-name">Ahmed Ezzat</p>
-            <p class="staff-role">Head Coach</p>
+            <p class="staff-role" data-i18n="head_coach">Head Coach</p>
           </div>
           <div class="staff-card">
             <div class="staff-avatar-wrap"><div class="staff-avatar">&#128100;</div></div>
             <p class="staff-name">Karim Elbeih</p>
-            <p class="staff-role">Assistant Coach</p>
+            <p class="staff-role" data-i18n="asst_coach">Assistant Coach</p>
           </div>
 
         </div>
@@ -136,7 +141,7 @@
 
       <!-- Goalkeepers Carousel -->
       <div class="squad-block">
-        <h3 class="squad-group-title">Goalkeepers</h3>
+        <h3 class="squad-group-title" data-i18n="pos_goalkeepers">Goalkeepers</h3>
         <div class="carousel-wrap">
           <button class="carousel-btn prev" aria-label="Previous">&#8249;</button>
           <div class="carousel-track">
@@ -150,7 +155,7 @@
 
       <!-- Defenders Carousel -->
       <div class="squad-block">
-        <h3 class="squad-group-title">Defenders</h3>
+        <h3 class="squad-group-title" data-i18n="pos_defenders">Defenders</h3>
         <div class="carousel-wrap">
           <button class="carousel-btn prev" aria-label="Previous">&#8249;</button>
           <div class="carousel-track">
@@ -174,7 +179,7 @@
 
       <!-- Midfielders Carousel -->
       <div class="squad-block">
-        <h3 class="squad-group-title">Midfielders</h3>
+        <h3 class="squad-group-title" data-i18n="pos_midfielders">Midfielders</h3>
         <div class="carousel-wrap">
           <button class="carousel-btn prev" aria-label="Previous">&#8249;</button>
           <div class="carousel-track">
@@ -197,7 +202,7 @@
 
       <!-- Forwards Carousel -->
       <div class="squad-block">
-        <h3 class="squad-group-title">Forwards</h3>
+        <h3 class="squad-group-title" data-i18n="pos_forwards">Forwards</h3>
         <div class="carousel-wrap">
           <button class="carousel-btn prev" aria-label="Previous">&#8249;</button>
           <div class="carousel-track">
@@ -222,9 +227,9 @@
     <div class="container">
       <div class="contact-inner">
         <div class="contact-left">
-          <p class="section-eyebrow">Reach Out</p>
-          <h2>Contact Us</h2>
-          <p class="contact-desc">Whether you want to join the club, ask a question, or just say hello — we'd love to hear from you.</p>
+          <p class="section-eyebrow" data-i18n="contact_eyebrow">Reach Out</p>
+          <h2 data-i18n="contact_title">Contact Us</h2>
+          <p class="contact-desc" data-i18n="contact_desc">Whether you want to join the club, ask a question, or just say hello — we'd love to hear from you.</p>
           <div class="contact-details">
             <div class="contact-row">
               <div class="contact-icon-wrap">&#9993;</div>
@@ -242,18 +247,18 @@
         </div>
         <form class="contact-form" action="https://formspree.io/f/maqvnqae" method="POST">
           <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required />
+            <label for="name" data-i18n="form_name">Full Name</label>
+            <input type="text" id="name" name="name" data-i18n-placeholder="form_name_ph" placeholder="Your name" required />
           </div>
           <div class="form-group">
-            <label for="email">Email Address</label>
+            <label for="email" data-i18n="form_email">Email Address</label>
             <input type="email" id="email" name="email" placeholder="your@email.com" required />
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+            <label for="message" data-i18n="form_msg">Message</label>
+            <textarea id="message" name="message" rows="5" data-i18n-placeholder="form_msg_ph" placeholder="How can we help?" required></textarea>
           </div>
-          <button type="submit" class="btn-primary full">Send Message</button>
+          <button type="submit" class="btn-primary full" data-i18n="form_submit">Send Message</button>
         </form>
       </div>
     </div>
@@ -267,10 +272,10 @@
           <img src="Logo-removebg-preview.png" alt="SV Pyramiden München" />
           <div>
             <strong>SV Pyramiden München</strong>
-            <span>Founded 2025</span>
+            <span data-i18n="footer_founded">Founded 2025</span>
           </div>
         </div>
-        <p class="footer-copy">&copy; 2025 SV Pyramiden München. All rights reserved.</p>
+        <p class="footer-copy" data-i18n="footer_copy">&copy; 2025 SV Pyramiden München. All rights reserved.</p>
       </div>
     </div>
   </footer>

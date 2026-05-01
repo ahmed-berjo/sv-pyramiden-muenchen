@@ -22,6 +22,19 @@ img { max-width: 100%; display: block; }
 /* ── Container ── */
 .container { max-width: 1140px; margin: 0 auto; padding: 0 2rem; }
 
+/* ── Language Toggle ── */
+.lang-toggle {
+  display: flex; align-items: center; gap: 0.4rem;
+  font-size: 0.8rem; color: var(--muted);
+}
+.lang-btn {
+  background: none; border: none; cursor: pointer;
+  font-size: 0.8rem; font-weight: 700; color: var(--muted);
+  padding: 0.2rem 0.3rem; transition: color 0.2s;
+}
+.lang-btn.active { color: var(--red); }
+.lang-btn:hover { color: var(--red); }
+
 /* ── Topbar ── */
 .topbar {
   background: var(--dark); color: rgba(255,255,255,0.6);
