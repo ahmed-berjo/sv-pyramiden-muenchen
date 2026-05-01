@@ -1,16 +1,46 @@
 // Carousels
 document.querySelectorAll('.carousel-wrap').forEach(wrap => {
   const track = wrap.querySelector('.carousel-track');
-  const cardWidth = () => {
-    const card = track.querySelector('.player-card');
-    return card ? card.offsetWidth + parseInt(getComputedStyle(track).gap) : 176;
+  const dotsContainer = wrap.closest('.squad-block').querySelector('.carousel-dots');
+  const cards = track.querySelectorAll('.player-card');
+
+  const cardW = () => cards[0].offsetWidth + 16;
+  const visible = () => Math.max(1, Math.round(track.offsetWidth / cardW()));
+  const pages = () => Math.max(1, Math.ceil(cards.length / visible()));
+
+  const buildDots = () => {
+    dotsContainer.innerHTML = '';
+    const n = pages();
+    if (n <= 1) return;
+    for (let i = 0; i < n; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => {
+        track.scrollTo({ left: cardW() * visible() * i, behavior: 'smooth' });
+      });
+      dotsContainer.appendChild(dot);
+    }
   };
+  buildDots();
+
+  track.addEventListener('scroll', () => {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const progress = maxScroll > 0 ? track.scrollLeft / maxScroll : 0;
+    const n = pages();
+    const active = Math.min(n - 1, Math.round(progress * (n - 1)));
+    dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === active);
+    });
+  });
+
   wrap.querySelector('.prev').addEventListener('click', () => {
-    track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+    track.scrollBy({ left: -cardW(), behavior: 'smooth' });
   });
   wrap.querySelector('.next').addEventListener('click', () => {
-    track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+    track.scrollBy({ left: cardW(), behavior: 'smooth' });
   });
+
+  window.addEventListener('resize', buildDots);
 });
 
 // Mobile nav toggle
