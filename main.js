@@ -1,7 +1,7 @@
 // Language toggle
 const translations = {
   en: {
-    nav_home: 'Home', nav_club: 'Club', nav_squad: 'Squad', nav_contact: 'Contact',
+    nav_home: 'Home', nav_club: 'Club', nav_squad: 'Squad', nav_contact: 'Contact', nav_join: 'Join Us',
     nav_sub: 'Munich',
     hero_eyebrow: 'Founded 2025 · Munich',
     hero_title: 'Where Heritage<br />Meets the<br /><em>Beautiful Game</em>',
@@ -28,10 +28,22 @@ const translations = {
     form_msg: 'Message', form_msg_ph: 'How can we help?',
     form_submit: 'Send Message',
     footer_founded: 'Founded 2025',
-    footer_copy: '© 2025 SV Pyramiden München. All rights reserved.'
+    footer_copy: '© 2025 SV Pyramiden München. All rights reserved.',
+    hero_cta3: 'Join Us as a Player',
+    join_eyebrow: 'Become a Player', join_title: 'Join Us',
+    join_desc: 'Think you have what it takes? Fill in the form and we\'ll get back to you.',
+    join_name: 'Full Name', join_dob: 'Date of Birth',
+    join_height: 'Height (cm)', join_weight: 'Weight (kg)',
+    join_phone: 'Phone Number', join_email: 'Email',
+    join_prev: 'Have you previously played in an 11-side football team?',
+    join_yes: 'Yes', join_no: 'No',
+    join_club: 'Club / Team Name', join_from: 'From', join_to: 'To',
+    join_pos1: 'Main Position', join_pos2: 'Secondary Position',
+    join_registered: 'Are you currently registered with another club?',
+    join_submit: 'Submit Application'
   },
   de: {
-    nav_home: 'Start', nav_club: 'Verein', nav_squad: 'Kader', nav_contact: 'Kontakt',
+    nav_home: 'Start', nav_club: 'Verein', nav_squad: 'Kader', nav_contact: 'Kontakt', nav_join: 'Mitmachen',
     nav_sub: 'München',
     hero_eyebrow: 'Gegründet 2025 · München',
     hero_title: 'Fußball verbindet –<br />Kulturen<br /><em>auch</em>',
@@ -58,7 +70,19 @@ const translations = {
     form_msg: 'Nachricht', form_msg_ph: 'Wie können wir dir helfen?',
     form_submit: 'Nachricht senden',
     footer_founded: 'Gegründet 2025',
-    footer_copy: '© 2025 SV Pyramiden München. Alle Rechte vorbehalten.'
+    footer_copy: '© 2025 SV Pyramiden München. Alle Rechte vorbehalten.',
+    hero_cta3: 'Als Spieler beitreten',
+    join_eyebrow: 'Werde Spieler', join_title: 'Mitmachen',
+    join_desc: 'Hast du das Zeug dazu? Füll das Formular aus und wir melden uns bei dir.',
+    join_name: 'Vollständiger Name', join_dob: 'Geburtsdatum',
+    join_height: 'Größe (cm)', join_weight: 'Gewicht (kg)',
+    join_phone: 'Telefonnummer', join_email: 'E-Mail',
+    join_prev: 'Hast du schon in einer 11er-Fußballmannschaft gespielt?',
+    join_yes: 'Ja', join_no: 'Nein',
+    join_club: 'Verein / Mannschaft', join_from: 'Von', join_to: 'Bis',
+    join_pos1: 'Hauptposition', join_pos2: 'Nebenposition',
+    join_registered: 'Bist du aktuell bei einem anderen Verein registriert?',
+    join_submit: 'Bewerbung absenden'
   }
 };
 
@@ -158,6 +182,15 @@ document.querySelectorAll('.carousel-wrap').forEach(wrap => {
 
   window.addEventListener('resize', buildDots);
 });
+
+// Join form — show/hide previous club details
+const prevYes = document.getElementById('prev-yes');
+const prevNo = document.getElementById('prev-no');
+const prevDetails = document.getElementById('prev-details');
+if (prevYes && prevNo && prevDetails) {
+  prevYes.addEventListener('change', () => prevDetails.classList.remove('hidden'));
+  prevNo.addEventListener('change', () => prevDetails.classList.add('hidden'));
+}
 
 // Mobile nav toggle
 const toggle = document.querySelector('.nav-toggle');
